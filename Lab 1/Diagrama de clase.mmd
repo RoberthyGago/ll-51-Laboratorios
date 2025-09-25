@@ -1,20 +1,65 @@
 classDiagram
     class Estudiante {
-        -id: int
+        -idEstudiante: int
         -nombre: string
         -email: string
         -carrera: string
         +registrar(): void
         +editarPerfil(): void
         +consultarCursos(): List<Curso>
+        +ConsultarCursosDisponible(): List<Curso>
+        +ConsultarCursosMatriculados(): List<Curso>
     }
  
     class Curso {
-        -codigo: string
+        -codigo_curso: string
         -nombre: string
         -creditos: int
+        +insertar(): void
+        +modificar(): void
+        +estado(): void 
+
+    }
+
+    class Periodo {
+        -anio_periodo: int
+        -nombre: string
+        -activo: boolean
+        +iniciarPeriodo(): void
+        +finalizarPeriodo(): void
+    }
+ 
+    
+    class Profesor {
+        -idProfesor: int 
+        -nombre: string 
+        -correo: string
+        +asignarCurso(): void
+        +consultarHorario(): void
+    }
+
+    class Grupo {
+        -idGrupo: int 
+        -idProfesor: int? 
+        -codigo_curso: string
+        -anio_periodo: int 
+        -horario: string
+        -capacidad: int  
+        +agregarEstudiante(): void
+        +consultarEstudiante(): void
+    }
+
+    class Matricula {
+        -id: int
+        -idEstudiante: int 
+        -idGrupo: int 
+        -fecha: date
         +matricular(): void
         +retirar(): void
     }
- 
-    Estudiante "1" --> "*" Curso : matrícula
+    
+    Grupo "1" --> "1" Curso : ofrece
+    Grupo "1" --> "1" Profesor : impartido
+    Estudiante "1" --> "1..*" Matricula : realiza 
+    Matricula "1" --> "1" Grupo : de 
+    Grupo "1" --> "1" Periodo : en
