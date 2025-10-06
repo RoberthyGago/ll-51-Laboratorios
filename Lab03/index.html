@@ -7,8 +7,29 @@
   <title>LAB-03</title>
   <style>
     body{
-      background-color: rgba(0, 0, 0, 0.623);
+      background-color:#a8dadc;
+    }  
+    h1, h2 {
+      color: #063b85;
     }
+    #main-title {
+      font: 2.5em;
+      border-top: 2px solid #063b85 ;
+    }
+    #main-ti{
+      font: 2.5em;
+      border-bottom: 2px solid #063b85 ;
+    }
+
+     #main-title {
+      font: 2.5em;
+      border-bottom: 2px solid #063b85 ;
+    }
+    .title{
+      font-family: 'Arial, sans-serif';
+      margin: 0;
+    }
+    
     .form-group label {
       display: block;
       margin-left: 5px;
@@ -18,7 +39,7 @@
     .form-input {
       width: 100%;
       padding: 10px 0;
-      border: 1px solid #ccc;
+      border: 1px solid #a8dadc;
       border-radius: 4px;
     }
 
@@ -29,7 +50,7 @@
     }
 
     .submit-button:hover {
-      background-color: #2563eb;
+      background-color: #0404fa;
       /* Un azul más oscuro al pasar el mouse */
     }
   </style>
@@ -39,7 +60,8 @@
 
   <!-- encabezado de cuerpo de la pagina-->
   <header>
-    <h1>Plataforma Educativa Universidad Central</h1>
+    <h1 id="main-title" class="title" >Plataforma Educativa</h1>
+    <h2 id="main-ti" class="title"> Universidad Central </h2>
   </header>
 
   <!-- menu -->
@@ -111,6 +133,22 @@
               <div>
                 <input type="checkbox" name="intereses" id="interes4" value="ciencia">
                 <label for="interes4">Ciencia de Datos</label>
+              </div>
+              <div>
+                <input type="checkbox" name="intereses" id="interes5" value="Cofi">
+                <label for="interes4">Contabilidad y Finanzas</label>
+              </div> 
+              <div>
+              <input type="checkbox" name="intereses" id="interes6" value="redes">
+              <label for="interes4">Telemática</label>
+              </div>
+              <div>
+              <input type="checkbox" name="intereses" id="interes7" value="Ecónimicas">
+              <label for="interes4">Econimía</label>
+              </div> 
+              <div>
+              <input type="checkbox" name="intereses" id="interes8" value="Administración">
+              <label for="interes4">Administración de Empresas</label>
               </div>
           </fieldset>
 
