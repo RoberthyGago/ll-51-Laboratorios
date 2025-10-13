@@ -4,55 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos.css">
   <title>LAB-03</title>
   <style>
-    body{
-      background-color:#a8dadc;
-    }  
-    h1, h2 {
-      color: #063b85;
-    }
-    #main-title {
-      font: 2.5em;
-      border-top: 2px solid #063b85 ;
-    }
-    #main-ti{
-      font: 2.5em;
-      border-bottom: 2px solid #063b85 ;
-    }
-
-     #main-title {
-      font: 2.5em;
-      border-bottom: 2px solid #063b85 ;
-    }
-    .title{
-      font-family: 'Arial, sans-serif';
-      margin: 0;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-left: 5px;
-      font-weight: bold;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 10px 0;
-      border: 1px solid #a8dadc;
-      border-radius: 4px;
-    }
-
-    .submit-button {
-      padding: 10px 50px;
-      border-radius: 15px;
-      transition: background-color 0.3s ease;
-    }
-
-    .submit-button:hover {
-      background-color: #0404fa;
-      /* Un azul más oscuro al pasar el mouse */
-    }
   </style>
 </head>
 
@@ -60,20 +14,22 @@
 
   <!-- encabezado de cuerpo de la pagina-->
   <header>
+    <div class="header-title"> 
     <h1 id="main-title" class="title" >Plataforma Educativa</h1>
     <h2 id="main-ti" class="title"> Universidad Central </h2>
-  </header>
+    
+    </div>
 
   <!-- menu -->
-  <nav>
+   <nav class="menu">
     <ul>
-      <li><a href="final/">Inicio</a></li>
-      <li><a href="#">Cursos</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Ayuda</a></li>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="cursos">Cursos</a></li>
+      <li><a href="contacto">Contacto</a></li>
+      <li><a href="ayuda">Ayuda</a></li>
     </ul>
-  </nav>
-
+   </nav>
+  </header>
   <main>
     <section>
       <form action="#" method="post">
@@ -156,16 +112,25 @@
         </fieldset>
       </form>
     </section>
-    <section>
+    <section id="video-section">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/LXb3EKWsInQ?si=KRC7kR0cZzGenVSb&amp;start=61"
         title="Video Incrustado" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
   </main>
+  
   <footer>
+    
     <p>&copy; 2023 Plataforma Educativa Universidad Central</p>
-    <p>Contacto: <a href="mailto:fabian.chinchilla@uc.ac.cr">Fabian</p>
+    <p>Contacto: <a href="mailto:fabian.chinchilla@uc.ac.cr">Roberth<a></p>
+
+  <div>
+    <p>Todos los derechos reservados.</p>
+    <section>
+      <p>Para más información, visite nuestro sitio web oficial.</p> 
+    </section>
+  </div>  
   </footer>
 </body>
 
