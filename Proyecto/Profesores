@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Profesores</title>
+  </head>
+  <body style="font-family:Arial; background-color:#f5f7fa;">
+
+    <header style="background-color:#002b5c; color:white; padding:15px;">
+      <h1 style="display:inline;">Universidad Central</h1>
+      <nav style="float:right;">
+        <a href="estudiantes.html" style="color:white; margin-right:10px;">Estudiantes</a>
+        <a href="cursos.html" style="color:white; margin-right:10px;">Cursos</a>
+        <a href="login.html" style="color:white;">Salir</a>
+      </nav>
+    </header>
+
+    <main style="text-align:center;">
+      <h2 style="color:#002b5c;">Profesores</h2>
+
+      <table style="margin:auto; border-collapse:collapse; width:70%;">
+        <thead style="background-color:#003366; color:white;">
+          <tr>
+            <th style="border:1px solid #ccc; padding:8px;">ID</th>
+            <th style="border:1px solid #ccc; padding:8px;">Nombre</th>
+            <th style="border:1px solid #ccc; padding:8px;">Correo</th>
+            <th style="border:1px solid #ccc; padding:8px;">Especialidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>01</td><td>Carlos Jiménez</td><td>carlos@uc.ac.cr</td><td>Contabilidad</td></tr>
+          <tr><td>02</td><td>María Vargas</td><td>maria@uc.ac.cr</td><td>Finanzas</td></tr>
+          <tr><td>03</td><td>Jorge Pérez</td><td>jorge@uc.ac.cr</td><td>Administración</td></tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

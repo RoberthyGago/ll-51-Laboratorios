@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio 1 - Sombras</title>
+    <style>
+        body {
+            background-color: #000; /* fondo negro para resaltar los efectos */
+            color: rgb(249, 248, 248);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        h1 {
+            margin: 20px;
+            transition: all 0.5s ease; /* transición general con duración */
+        }
+
+        /* Encabezado principal con fondo y sombra */
+        .fondo {
+            padding: 10px 20px;
+            background-color: rgb(230, 175, 173);
+            width: fit-content;
+            margin: 0 auto;
+            box-shadow: 5px 5px 10px 5px rgb(128, 128, 128);
+            border-radius: 10px;
+            transition: box-shadow 0.5s ease, transform 0.5s ease;
+        }
+
+        .fondo:hover {
+            box-shadow: 5px 5px 20px 10px #6ab4ff;
+            transform: scale(1.05);
+        }
+
+        /* Sombra de texto normal */
+        #sombra {
+            text-shadow: 3px 3px 6px rgb(14, 13, 13);
+            transition: color 0.5s ease, text-shadow 0.5s ease;
+        }
+
+        #sombra:hover {
+            color: lightblue;
+            text-shadow: 5px 5px 12px lightblue;
+        }
+
+        /* Efecto de neón solo con transición */
+        #neon {
+            color: #ff0000;
+            text-shadow: 0 0 10px #ff0000, 0 0 20px #ff4500;
+            transition: color 0.6s ease, text-shadow 0.6s ease;
+        }
+
+        #neon:hover {
+            color: #ff7b00;
+            text-shadow: 0 0 15px #ff7b00, 0 0 30px #ff4500, 0 0 45px #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="fondo">Laboratorio 1 "Sombras"</h1>
+    <h1 id="sombra">Texto con sombra</h1>
+    <h1 id="neon">Texto con neón</h1>
+</body>
+</html>

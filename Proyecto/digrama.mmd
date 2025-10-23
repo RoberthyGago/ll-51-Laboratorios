@@ -1,0 +1,31 @@
+classDiagram
+    class Estudiante {
+        -id: int
+        -nombre: string
+        -email: string
+        -carrera: string
+        +registrar(): void
+        +editarPerfil(): void
+        +consultarCursos(): List<Curso>
+        +ConsultarCursosDisponible(): List<Curso>
+        +ConsultarCursosMatriculados(): List<Curso>
+    }
+
+       class Curso {
+        -codigo: string
+        -nombre: string
+        -creditos: int
+        +matricular(): void
+        +retirar(): void
+    }
+
+        class Profesor {
+        -idProfesor: string
+        -nombre: string 
+        +asignarCurso(): void
+        +consultarHorario(): void
+    }
+
+    Curso "1" --> "1" Profesor : impartido por
+    Estudiante "1" --> "*" Curso : matriculado en   
+    

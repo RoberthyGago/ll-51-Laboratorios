@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Inicio de Sesión</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <header>
+    <h1>Plataforma Educativa</h1>
+    <h2>Universidad Central</h2>
+  </header>
+
+  <main>
+    <section class="login-container">
+      <h3>Inicio de Sesión</h3>
+
+      <form action="#" method="post" class="login-form">
+        <label for="usuario">Usuario o Correo:</label>
+        <input type="text" id="usuario" name="usuario" placeholder="Ingrese su usuario" required>
+
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" placeholder="Ingrese su contraseña" required>
+
+        <div class="form-options">
+          <label>
+            <input type="checkbox" name="recordar"> Recordarme
+          </label>
+          <a href="#">¿Olvidó su contraseña?</a>
+        </div>
+
+        <button type="submit">Ingresar</button>
+      </form>
+
+      <p class="register-text">¿No tiene una cuenta? <a href="#">Regístrese aquí</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plataforma Educativa - Universidad Central</p>
+    <p>Contacto: <a href="rcordero@hotmail.com">Roberth Cordero</a></p>
+  </footer>
+</body>
+</html>
