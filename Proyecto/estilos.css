@@ -2,15 +2,21 @@
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #004080, #0078d4);
-  color: #333;
+  color: #272121;
   margin: 0;
   padding: 0;
 }
 
+h1 {
+  color:white;
+}
+h2{ 
+  color: white;
+}
 /* Encabezado */
 header {
   text-align: center;
-  color: white;
+  text-shadow: 0 0 1px #eef1f3, 0 0 20px #ece9e7;
   padding: 30px 0;
 }
 
@@ -24,15 +30,15 @@ header h2 {
   font-weight: normal;
 }
 
-/* Contenedor principal */
+/* principal */
 .login-container {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   width: 90%;
   max-width: 400px;
   margin: 50px auto;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px -5px 6px 1px rgb(128, 128, 128);
   text-align: center;
 }
 
@@ -124,3 +130,5 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+

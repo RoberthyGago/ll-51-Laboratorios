@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="estilos.css" />
   </head>
   <body>
-    <i class="fa-solid fa-moon"></i>
+    <i class="fa-solid fa-moon" id="modoOscuro"></i>
     <h2>Formulario de prueba</h2>
 
     <form id="miFormulario">
@@ -53,5 +53,12 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+  
+    <script>
+  document.getElementById("modoOscuro").addEventListener("click", function () {
+    document.body.classList.toggle("dark-mode");
+  });
+</script>
+  
   </body>
 </html>
