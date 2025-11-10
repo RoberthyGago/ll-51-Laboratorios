@@ -1,11 +1,148 @@
-.caja {
-  padding: 10px;
-  border: 1px solid #ccc;
-  transition: background-color 0.3s;
+#ctn-1 {
+  background-color: #fd0707;
 }
 
-.caja.color {
-  background-color: #d1ecf1;
-  color: #0c5460;
-  font-weight: bold;
+#ctn-2 {
+  background-color: #f30606;
+}
+
+.pintar > .row > div {
+  background-color: #98cbff;
+  border: 1px solid #000;
+  padding: 10px;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+/* No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) cambia color a parrafos*/
+@media (min-width: 576px) {
+  p{
+    color: red !important;
+  }
+}
+ 
+/* Medium devices (tablets, 768px and up) cambia colo*/
+@media (min-width: 768px) {
+  p{
+    color: blue !important;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  p{
+    color: green !important;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  p{
+    color: purple !important;
+  }
+}
+
+/* Botón Validar en azul */
+#validarBtn {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 0px;
+}
+
+#validarBtn:hover {
+  background-color: #187bcd;
+}
+
+/* Botón Agregar clase en azul */
+#agregarClase {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+#agregarClase:hover {
+  background-color: #187bcd;
+}
+
+/* Botón Quitar clase en rojo */
+#quitarClase {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 7px;
+  margin-left: 40px;
+}
+
+#quitarClase:hover {
+  background-color: #a71d2a;
+}
+
+/* Botón Mostrar/Ocultar en negro */
+#mostrarOcultar {
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+#mostrarOcultar:hover {
+  background-color: #333;
+}
+
+/* Caja de texto */
+.caja {
+  padding: 10px;
+  border: 1px solid #000;
+  background-color: #f7f8fa;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+#miFormulario {
+  margin-left: 40px;
+}
+
+h2{
+  margin-left: 40px;
+}
+
+/* con esto hago modo oscuro con la luna */
+.dark-mode {
+  background-color: #000;
+  color: white;
+}
+
+.dark-mode input,
+.dark-mode button {
+  background-color: #222;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* Modo oscuro para la caja de texto */
+.dark-mode {
+  background-color: #000;
+  color: white;
+}
+
+/* Modo oscuro para el cuadro */
+.dark-mode .caja {
+  background-color: #222; /* fondo oscuro para el cuadro */
+  color: white;           /* texto blanco */
+  border: 1px solid #555; /* borde más suave */
 }
