@@ -1,7 +1,22 @@
 #ctn-1 {
   background-color: #fd0707;
 }
-
+.caja {
+  padding: 10px;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.caja.color{
+  background-color: #d1ecf1;
+  color: #0c5460;
+  font-weight: bold;
+}
+.oscuro {
+  background-color: #222;
+  color: #f1f1f1;
+}
 #ctn-2 {
   background-color: #f30606;
 }
@@ -51,7 +66,7 @@
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 0px;
+  
 }
 
 #validarBtn:hover {
@@ -66,7 +81,6 @@
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 40px;
 }
 
 #agregarClase:hover {
@@ -91,13 +105,17 @@
 
 /* Botón Mostrar/Ocultar en negro */
 #mostrarOcultar {
-  background-color: #000;
+  background-color: #000000;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 40px;
+  margin-left: -3px;
+  
+}
+.dark-mode .mostrarOcultar{
+  background-color: #a71d2a;
 }
 
 #mostrarOcultar:hover {
@@ -110,15 +128,16 @@
   border: 1px solid #000;
   background-color: #f7f8fa;
   margin-top: 10px;
-  margin-left: 40px;
+  
 }
 
 #miFormulario {
-  margin-left: 40px;
+  margin-left: -0px;
+  top: auto;
 }
 
 h2{
-  margin-left: 40px;
+  margin-top: -0px; 
 }
 
 /* con esto hago modo oscuro con la luna */
@@ -143,6 +162,9 @@ h2{
 /* Modo oscuro para el cuadro */
 .dark-mode .caja {
   background-color: #222; /* fondo oscuro para el cuadro */
-  color: white;           /* texto blanco */
-  border: 1px solid #555; /* borde más suave */
+  color: rgb(250, 246, 246);           /* texto blanco */
+  border: 1px solid #555; /* borde más suave */ 
 }
+
+
+

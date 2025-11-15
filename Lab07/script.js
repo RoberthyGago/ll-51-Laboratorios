@@ -26,3 +26,23 @@ $("#quitarClase").click(function () {
 $("#mostrarOcultar").click(function () {
   $("#elementoOculto").toggle();
 });
+
+// Alternar tema claro/oscuro
+let temaOscuro = false;
+function alternarTema() {
+  temaOscuro = !temaOscuro;
+  if (temaOscuro) {
+    document.getElementById("tema").className = "fa-solid fa-sun";
+  } else {
+    document.getElementById("tema").className = "fa-solid fa-moon";
+  }
+ 
+  document.getElementById("contenido").classList.toggle("oscuro");
+}  
+ let contador = 0;
+  const contadorElemento = document.getElementById("contador");
+
+  const modificarContador = (cambio) => {
+    contador += cambio;
+    contadorElemento.textContent = contador;
+  }
