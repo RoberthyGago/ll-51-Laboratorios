@@ -30,7 +30,7 @@
     <section class="card p-4 shadow login-container mx-auto" style="max-width: 400px;">
       <h3 class="mb-4 text-center">Inicio de Sesión</h3>
 
-      <form action="#" method="post" class="login-form">
+      <form id="login-form" class="login-form">
         <div class="mb-3">
           <label for="usuario" class="form-label">Usuario o Correo:</label>
           <input type="text" id="usuario" name="usuario" class="form-control" placeholder="Ingrese su usuario" required>
@@ -55,5 +55,15 @@
     <p>&copy; 2025 Plataforma Educativa - Universidad Central</p>
     <p>Contacto: <a href="mailto:rcordero@hotmail.com">Roberth Cordero</a></p>
   </footer>
+
+  <!-- Script de redirección -->
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(e) {
+      e.preventDefault(); // Evita que se recargue la página
+
+      
+      window.location.href = "cursos.html";
+    });
+  </script>
 </body>
 </html>
