@@ -1,102 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <title>Cursos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-</head>
-<body style="font-family: Arial, sans-serif; background-color: #f5f7fa; margin: 0; padding: 10px;">
-
-  <header style="background-color: #002b5c; color: white; padding: 15px; text-align: center;">
-    <h1 style="display: inline">Módulo de Cursos</h1>
-  </header>
-<!-- Navegar -->
-<div id="navegacion" style="background-color: #999; height: 30px; display: flex; justify-content: flex-end;">
-  <ul style="margin: 0; padding: 0; list-style: none; display: flex;">
-    <li style="width: 170px; height: 30px; background-color: #ccc; text-align: center; border-left: 1px solid black; border-right: 1px solid black; line-height: 30px;">
-      <a href="estudiantes.html" style="text-decoration: none; color: black; display: block;">Estudiantes</a>
-    </li>
-    <li style="width: 170px; height: 30px; background-color: #ccc; text-align: center; border-left: 1px solid black; border-right: 1px solid black; line-height: 30px;">
-      <a href="profesores.html" style="text-decoration: none; color: black; display: block;">Profesores</a>
-    </li>
-    <li style="width: 170px; height: 30px; background-color: #ccc; text-align: center; border-left: 1px solid black; border-right: 1px solid black; line-height: 30px;">
-      <a href="index.html" style="text-decoration: none; color: black; display: block;">Login</a>
-    </li>
-  </ul>
-</div>
-
-  <main class="text-center">
-    
-
-    <!-- Formulario -->
-    <div class="container mt-4 mb-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <h3 class="text-primary mb-4">Registrar Nuevo Curso</h3>
-          <form id="formulario">
-            <div class="mb-3 text-start">
-              <label for="codigo" class="form-label">Código del curso</label>
-              <input type="text" class="form-control" id="codigo">
-            </div>
-            <div class="mb-3 text-start">
-              <label for="nombre" class="form-label">Nombre del curso</label>
-              <input type="text" class="form-control" id="nombre">
-            </div>
-            <div class="mb-3 text-start">
-              <label for="creditos" class="form-label">Cantidad de créditos</label>
-              <input type="number" class="form-control" id="creditos">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Registrar Curso</button>
-          </form>
-        </div>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cursos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 10px;
+    "
+  >
+    <header
+      style="
+        background-color: #002b5c;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      "
+    >
+      <h1 style="display: inline">Módulo de Cursos</h1>
+    </header>
+    <!-- Navegar -->
+    <div
+      id="navegacion"
+      style="
+        background-color: #999;
+        height: 30px;
+        display: flex;
+        justify-content: flex-end;
+      "
+    >
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex">
+        <li
+          style="
+            width: 170px;
+            height: 30px;
+            background-color: #ccc;
+            text-align: center;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            line-height: 30px;
+          "
+        >
+          <a
+            href="estudiantes.html"
+            style="text-decoration: none; color: black; display: block"
+            >Estudiantes</a
+          >
+        </li>
+        <li
+          style="
+            width: 170px;
+            height: 30px;
+            background-color: #ccc;
+            text-align: center;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            line-height: 30px;
+          "
+        >
+          <a
+            href="profesores.html"
+            style="text-decoration: none; color: black; display: block"
+            >Profesores</a
+          >
+        </li>
+        <li
+          style="
+            width: 170px;
+            height: 30px;
+            background-color: #ccc;
+            text-align: center;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            line-height: 30px;
+          "
+        >
+          <a
+            href="index.html"
+            style="text-decoration: none; color: black; display: block"
+            >Login</a
+          >
+        </li>
+      </ul>
     </div>
 
-    <!-- Tabla -->
-     <h2 style="color: #002b5c; margin-top: 20px;">Cursos Disponibles</h2>
-    <table style="margin: auto; border-collapse: collapse; width: 70%;">
-      <thead style="background-color: #002b5c; color: white;">
-        <tr>
-          <th style="border: 1px solid black; padding: 8px;">Código</th>
-          <th style="border: 1px solid black; padding: 8px;">Nombre</th>
-          <th style="border: 1px solid black; padding: 8px;">Créditos</th>
-        </tr>
-      </thead>
-      <tbody id="tabla-cursos">
-       
-      </tbody>
-    </table>
-  </main>
+    <main class="text-center">
+      <!-- Formulario -->
+      <div class="container mt-4 mb-5">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h3 class="text-primary mb-4">Registrar Nuevo Curso</h3>
+            <form id="formulario">
+              <div class="mb-3 text-start">
+                <label for="codigo" class="form-label">Código del curso</label>
+                <input type="text" class="form-control" id="codigo" />
+              </div>
+              <div class="mb-3 text-start">
+                <label for="nombre" class="form-label">Nombre del curso</label>
+                <input type="text" class="form-control" id="nombre" />
+              </div>
+              <div class="mb-3 text-start">
+                <label for="creditos" class="form-label"
+                  >Cantidad de créditos</label
+                >
+                <input type="number" class="form-control" id="creditos" />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Registrar Curso
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
 
-  <!--agregar cursos -->
-  <script>
-    document.getElementById("formulario").addEventListener("submit", function (e) {
-      e.preventDefault();
+      <!-- Tabla -->
+      <h2 style="color: #002b5c; margin-top: 20px">Cursos Disponibles</h2>
+      <table style="margin: auto; border-collapse: collapse; width: 70%">
+        <thead style="background-color: #002b5c; color: white">
+          <tr>
+            <th style="border: 1px solid black; padding: 8px">Código</th>
+            <th style="border: 1px solid black; padding: 8px">Nombre</th>
+            <th style="border: 1px solid black; padding: 8px">Créditos</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-cursos"></tbody>
+      </table>
+    </main>
 
-      const codigo = document.getElementById("codigo").value.trim();
-      const nombre = document.getElementById("nombre").value.trim();
-      const creditos = document.getElementById("creditos").value.trim();
+    <!--agregar cursos -->
+    <script>
+      document
+        .getElementById("formulario")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-      if (!codigo || !nombre || !creditos) {
-        alert("Por favor, completa todos los campos.");
-        return;
-      }
+          const codigo = document.getElementById("codigo").value.trim();
+          const nombre = document.getElementById("nombre").value.trim();
+          const creditos = document.getElementById("creditos").value.trim();
 
-      const nuevaFila = document.createElement("tr");
-      nuevaFila.innerHTML = `
+          if (!codigo || !nombre || !creditos) {
+            alert("Por favor, completa todos los campos.");
+            return;
+          }
+
+          const nuevaFila = document.createElement("tr");
+          nuevaFila.innerHTML = `
         <td style="border: 1px solid black; padding: 8px;">${codigo}</td>
         <td style="border: 1px solid black; padding: 8px;">${nombre}</td>
         <td style="border: 1px solid black; padding: 8px;">${creditos}</td>
       `;
 
-      document.getElementById("tabla-cursos").appendChild(nuevaFila);
+          document.getElementById("tabla-cursos").appendChild(nuevaFila);
 
-      document.getElementById("codigo").value = "";
-      document.getElementById("nombre").value = "";
-      document.getElementById("creditos").value = "";
+          document.getElementById("codigo").value = "";
+          document.getElementById("nombre").value = "";
+          document.getElementById("creditos").value = "";
 
-      alert("Curso registrado correctamente.");
-    });
-  </script>
-</body>
+          alert("Curso registrado correctamente.");
+        });
+    </script>
+  </body>
 </html>
