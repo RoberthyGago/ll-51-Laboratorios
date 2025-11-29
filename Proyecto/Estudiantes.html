@@ -8,176 +8,80 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
-  <body
-    style="
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
-      margin: 0;
-      padding: 10px;
-    "
-  >
-    <header
-      style="
-        background-color: #002b5c;
-        color: white;
-        padding: 15px;
-        text-align: center;
-      "
-    >
-      <h1 style="display: inline">Módulo de Estudiantes</h1>
+  <body style="font-family: Arial, sans-serif; background-color: #f5f7fa;">
+    <header style="background-color: #002b5c; color: white; padding: 15px; text-align: center;">
+      <h1 style="margin: 0">Módulo de Estudiantes</h1>
     </header>
 
-    <!-- Navegación -->
-    <div
-      id="navegacion"
-      style="
-        background-color: #999;
-        height: 30px;
-        display: flex;
-        justify-content: flex-end;
-      "
-    >
-      <ul style="margin: 0; padding: 0; list-style: none; display: flex">
-        <li
-          style="
-            width: 170px;
-            height: 30px;
-            background-color: #ccc;
-            text-align: center;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            line-height: 30px;
-          "
-        >
-          <a
-            href="estudiantes.html"
-            style="text-decoration: none; color: black; display: block"
-            >Estudiantes</a
-          >
-        </li>
-        <li
-          style="
-            width: 170px;
-            height: 30px;
-            background-color: #ccc;
-            text-align: center;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            line-height: 30px;
-          "
-        >
-          <a
-            href="profesores.html"
-            style="text-decoration: none; color: black; display: block"
-            >Profesores</a
-          >
-        </li>
-        <li
-          style="
-            width: 170px;
-            height: 30px;
-            background-color: #ccc;
-            text-align: center;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            line-height: 30px;
-          "
-        >
-          <a
-            href="index.html"
-            style="text-decoration: none; color: black; display: block"
-            >Login</a
-          >
-        </li>
-      </ul>
-    </div>
+    <nav style="background-color: #f4f4f4; padding: 10px; text-align: right;">
+      <a href="Cursos.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+        <i class="fas fa-user"></i> Cursos
+      </a>
+      <a href="profesores.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+        <i class="fas fa-chalkboard-teacher"></i> Profesores
+      </a>
+      <a href="index.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+        <i class="fas fa-lock"></i> Login
+      </a>
+    </nav>
 
     <main class="text-center">
-      <!-- Formulario -->
       <div class="container mt-4 mb-5">
         <div class="row justify-content-center">
           <div class="col-md-6">
             <h3 class="text-primary mb-4">Registrar Nuevo Estudiante</h3>
-            <form id="form-estudiantes">
+            <form id="formulario">
               <div class="mb-3 text-start">
-                <label for="cedula" class="form-label">Cédula</label>
-                <input type="text" class="form-control" id="cedula" />
+                <label for="codigo" class="form-label">Identificación</label>
+                <input type="text" class="form-control" id="codigo" required />
               </div>
               <div class="mb-3 text-start">
-                <label for="nombre" class="form-label"
-                  >Nombre del Estudiante</label
-                >
-                <input type="text" class="form-control" id="nombre" />
+                <label for="nombre" class="form-label">Nombre del Estudiante</label>
+                <input type="text" class="form-control" id="nombre" required />
               </div>
               <div class="mb-3 text-start">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" />
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required /> 
               </div>
-              <div class="mb-3 text-start">
-                <label for="carrera" class="form-label">Carrera</label>
-                <input type="text" class="form-control" id="carrera" />
-              </div>
-              <button type="submit" class="btn btn-primary w-100">
-                Registrar Estudiante
-              </button>
+                <div class="mb-3 text-start">
+                <label for="carrera" class="form-label">Carrera</label> 
+                <select class="form-select" id="carrera" required>
+                  <option value="" disabled selected>Seleccione una carrera</option>
+                  <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+                  <option value="Administración de Empresas">Administración de Empresas</option>
+                  <option value="Derecho">Derecho</option>
+                  <option value="Contabilidad y Finanzas">Contabilidad y Finanzas</option>
+                  <option value="Arquitectura">Arquitectura</option>
+                </select>
+                </div>
+              <button type="submit" class="btn btn-primary w-100">Registrar Estudiante</button>
             </form>
           </div>
         </div>
       </div>
 
-      <!-- Tabla -->
-      <h2 style="color: #002b5c; margin-top: 20px">Estudiantes</h2>
-      <table style="margin: auto; border-collapse: collapse; width: 80%">
-        <thead style="background-color: #002b5c; color: white">
-          <tr>
-            <th style="border: 1px solid black; padding: 8px">Cédula</th>
-            <th style="border: 1px solid black; padding: 8px">Nombre</th>
-            <th style="border: 1px solid black; padding: 8px">Email</th>
-            <th style="border: 1px solid black; padding: 8px">Carrera</th>
-          </tr>
-        </thead>
-        <tbody id="tabla-estudiantes">
-          <!-- Filas dinámicas -->
-        </tbody>
-      </table>
+      <div class="container mt-4">
+        <h3 class="text-primary mb-3 text-center">Lista de Estudiantes</h3>
+        <table class="table table-bordered table-striped text-center">
+          <thead class="table-primary">
+            <tr>
+              <th>Identificación</th>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+              <th>Carrera</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-estudiantes"></tbody>
+        </table>
+      </div>
     </main>
 
-    <!-- Script -->
-    <script>
-      document
-        .getElementById("form-estudiantes")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const cedula = document.getElementById("cedula").value.trim();
-          const nombre = document.getElementById("nombre").value.trim();
-          const email = document.getElementById("email").value.trim();
-          const carrera = document.getElementById("carrera").value.trim();
-
-          if (!cedula || !nombre || !email || !carrera) {
-            alert("Por favor, completa todos los campos.");
-            return;
-          }
-
-          const nuevaFila = document.createElement("tr");
-          nuevaFila.innerHTML = `
-        <td style="border: 1px solid black; padding: 8px;">${cedula}</td>
-        <td style="border: 1px solid black; padding: 8px;">${nombre}</td>
-        <td style="border: 1px solid black; padding: 8px;">${email}</td>
-        <td style="border: 1px solid black; padding: 8px;">${carrera}</td>
-      `;
-
-          document.getElementById("tabla-estudiantes").appendChild(nuevaFila);
-
-          // Limpiar campos
-          document.getElementById("cedula").value = "";
-          document.getElementById("nombre").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("carrera").value = "";
-
-          alert("Estudiante registrado correctamente.");
-        });
-    </script>
+    <script type="module" src="app1.js"></script>
   </body>
 </html>

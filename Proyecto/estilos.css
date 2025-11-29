@@ -7,12 +7,21 @@ body {
   padding: 0;
 }
 
-h1 {
+h1, h2 {
   color:white;
 }
-h2{ 
-  color: white;
+/* Estilos generales para títulos */
+h1, h2 {
+  transition: transform 0.3s ease; 
+  cursor: pointer; 
 }
+
+/* Efecto al pasar el puntero */
+h1:hover, h2:hover {
+  transform: scale(1.2);
+  color: #f8f9fa; 
+}
+
 /* Encabezado */
 header {
   text-align: center;
