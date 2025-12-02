@@ -1,46 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab08</title>
+    <title>Gestión de Cursos</title>
   </head>
   <body>
     <div class="container mt-5">
       <h1>Lista de Cursos</h1>
-      <ul id="lista" class="list-group">
-        <li class="list-group-item">Curso 1: Introducción a la programación</li>
-      </ul>
-      <!-- formulario curoso -->
-      <form id="curso-form">
+      <ul id="lista" class="list-group"></ul>
+
+      <!-- formulario curso -->
+      <form id="curso-form" class="mt-5">
         <h2 id="form-title">Registrar curso</h2>
 
-        <input type="hidden" id="id" /> 
+        <input type="hidden" id="id" />
 
-        <label>Código</label>
-        <input type="text" id="codigo" required />
+        <label for="codigo">Código</label>
+        <input type="text" id="codigo" class="form-control" required />
 
-        <label>Nombre del curso</label>
-        <input type="text" id="nombre" required />
+        <label for="nombre">Nombre del curso</label>
+        <input type="text" id="nombre" class="form-control" required />
 
-        <label>Créditos</label>
-        <input type="number" id="creditos" required min="1" max="5" />
+        <label for="creditos">Créditos</label>
+        <input
+          type="number"
+          id="creditos"
+          class="form-control"
+          required
+          min="1"
+          max="5"
+        />
 
-        <button type="submit" id="btn-save">Guardar</button>
-        <button type="button" id="btn-cancel" style="display: none">
+        <button type="submit" id="btn-save" class="btn btn-primary m-3">
+          Guardar Curso
+        </button>
+        <button
+          type="button"
+          id="btn-cancel"
+          style="display: none"
+          class="btn btn-secondary"
+        >
           Cancelar
         </button>
 
         <div id="status"></div>
       </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
     <script type="module" src="./app.js"></script>
   </body>
 </html>
