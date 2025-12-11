@@ -6,12 +6,12 @@ const inputNombre = document.getElementById("nombre");
 const inputCreditos = document.getElementById("creditos");
 const tablaCursos = document.getElementById("tabla-cursos");
 
-// 👇 nuevos elementos
+//  nuevos elementos
 const tituloForm = document.getElementById("form-title");
 const btnCancel = document.getElementById("btn-cancel");
 const btnSave = document.querySelector("#formulario button[type='submit']");
 
-// Estado de edición
+// ingresar datos
 let editando = false;
 let codigoEditando = null;
 
@@ -52,7 +52,7 @@ form.addEventListener("submit", async (e) => {
       alert("Error al registrar el curso.");
       return;
     }
-    alert("Curso registrado correctamente.");
+    
   }
 
   form.reset();
@@ -104,7 +104,7 @@ tablaCursos.addEventListener("click", async (e) => {
     editando = true;
     codigoEditando = curso.codigo;
 
-    // 👇 Cambiar título y botones
+    // Cambiar título y botones
     tituloForm.textContent = "Editar curso";
     btnSave.textContent = "Actualizar Curso";
     btnCancel.style.display = "inline-block";
