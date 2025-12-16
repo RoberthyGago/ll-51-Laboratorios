@@ -27,7 +27,7 @@ form.addEventListener("submit", async (e) => {
     alert("Por favor, completa todos los campos.");
     return;
   }
-
+//actualizar o insertar
   if (editando && codigoEditando) {
     const { error } = await supabase
       .from("curso")

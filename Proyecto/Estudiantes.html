@@ -13,19 +13,50 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
-  <body style="font-family: Arial, sans-serif; background-color: #f5f7fa;">
-    <header style="background-color: #002b5c; color: white; padding: 15px; text-align: center;">
+  <body style="font-family: Arial, sans-serif; background-color: #f5f7fa">
+    <header
+      style="
+        background-color: #002b5c;
+        color: white;
+        padding: 15px;
+        text-align: center;
+      "
+    >
       <h1 style="margin: 0">Módulo de Estudiantes</h1>
     </header>
 
-    <nav style="background-color: #f4f4f4; padding: 10px; text-align: right;">
-      <a href="Cursos.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+    <nav style="background-color: #f4f4f4; padding: 10px; text-align: right">
+      <a
+        href="Cursos.html"
+        style="
+          color: #002b5c;
+          margin: 0 15px;
+          text-decoration: underline;
+          font-weight: bold;
+        "
+      >
         <i class="fas fa-user"></i> Cursos
       </a>
-      <a href="profesores.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+      <a
+        href="profesores.html"
+        style="
+          color: #002b5c;
+          margin: 0 15px;
+          text-decoration: underline;
+          font-weight: bold;
+        "
+      >
         <i class="fas fa-chalkboard-teacher"></i> Profesores
       </a>
-      <a href="index.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+      <a
+        href="index.html"
+        style="
+          color: #002b5c;
+          margin: 0 15px;
+          text-decoration: underline;
+          font-weight: bold;
+        "
+      >
         <i class="fas fa-lock"></i> Login
       </a>
     </nav>
@@ -34,32 +65,45 @@
       <div class="container mt-4 mb-5">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <h3 class="text-primary mb-4">Registrar Nuevo Estudiante</h3>
+            <h3 id="form-title" class="text-primary mb-4">Registrar Nuevo Estudiante</h3>
             <form id="formulario">
               <div class="mb-3 text-start">
                 <label for="codigo" class="form-label">Identificación</label>
                 <input type="text" class="form-control" id="codigo" required />
               </div>
               <div class="mb-3 text-start">
-                <label for="nombre" class="form-label">Nombre del Estudiante</label>
+                <label for="nombre" class="form-label"
+                  >Nombre del Estudiante</label
+                >
                 <input type="text" class="form-control" id="nombre" required />
               </div>
               <div class="mb-3 text-start">
                 <label for="email" class="form-label">Correo Electrónico</label>
-                <input type="email" class="form-control" id="email" required /> 
+                <input type="email" class="form-control" id="email" required />
               </div>
-                <div class="mb-3 text-start">
-                <label for="carrera" class="form-label">Carrera</label> 
+              <div class="mb-3 text-start">
+                <label for="carrera" class="form-label">Carrera</label>
                 <select class="form-select" id="carrera" required>
-                  <option value="" disabled selected>Seleccione una carrera</option>
-                  <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-                  <option value="Administración de Empresas">Administración de Empresas</option>
+                  <option value="" disabled selected>
+                    Seleccione una carrera
+                  </option>
+                  <option value="Ingeniería de Sistemas">
+                    Ingeniería de Sistemas
+                  </option>
+                  <option value="Administración de Empresas">
+                    Administración de Empresas
+                  </option>
                   <option value="Derecho">Derecho</option>
-                  <option value="Contabilidad y Finanzas">Contabilidad y Finanzas</option>
+                  <option value="Contabilidad y Finanzas">
+                    Contabilidad y Finanzas
+                  </option>
                   <option value="Arquitectura">Arquitectura</option>
                 </select>
-                </div>
-              <button type="submit" class="btn btn-primary w-100">Registrar Estudiante</button>
+              </div>
+              <button type="submit" class="btn btn-primary m-3">Registrar Estudiante</button>
+              <button type="button" id="btn-cancel" class="btn btn-secondary m-3" style="display:none;">
+                Cancelar
+              </button>
             </form>
           </div>
         </div>

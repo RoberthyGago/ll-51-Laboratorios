@@ -7,6 +7,16 @@ const inputEmail = document.getElementById("email");
 const inputCarrera = document.getElementById("carrera");
 const tablaEstudiantes = document.getElementById("tabla-estudiantes");
 
+// UI
+const tituloForm = document.getElementById("form-title");
+const btnCancel = document.getElementById("btn-cancel");
+const btnSave = document.querySelector("#formulario button[type='submit']");
+
+// estado
+let editando = false;
+let codigoEditando = null;
+
+// REGISTRAR / ACTUALIZAR
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -15,50 +25,125 @@ form.addEventListener("submit", async (e) => {
   const email = inputEmail.value.trim();
   const carrera = inputCarrera.value;
 
-  if (!codigo || isNaN(codigo) || !nombre || !email || !carrera) {
+  if (isNaN(codigo) || !nombre || !email || !carrera) {
     alert("Por favor, completa todos los campos correctamente.");
     return;
   }
 
-  const { error } = await supabase
-    .from("estudiante") // 👈 nombre confirmado
-    .insert([{ codigo, nombre, email, carrera }]);
+  // ACTUALIZAR
+  if (editando && codigoEditando !== null) {
+    const { error } = await supabase
+      .from("estudiante")
+      .update({ nombre, email, carrera })
+      .eq("codigo", codigoEditando);
 
-  if (error) {
-    console.error("Error al insertar estudiante:", error.message);
-    alert("Error al registrar el estudiante.");
-    return;
+    if (error) {
+      console.error("Error al actualizar estudiante:", error.message);
+      alert("Error al actualizar el estudiante.");
+      return;
+    }
+
+    alert("Estudiante actualizado correctamente.");
+    resetFormulario();
+  } 
+  // INSERTAR
+  else {
+    const { error } = await supabase
+      .from("estudiante")
+      .insert([{ codigo, nombre, email, carrera }]);
+
+    if (error) {
+      console.error("Error al insertar estudiante:", error.message);
+      alert("Error al registrar el estudiante.");
+      return;
+    }
+
+    alert("Estudiante registrado correctamente.");
   }
 
   form.reset();
   cargarEstudiantes();
 });
 
+// CANCELAR EDICIÓN
+btnCancel.addEventListener("click", () => {
+  resetFormulario();
+});
+
+// EDITAR / ELIMINAR
 tablaEstudiantes.addEventListener("click", async (e) => {
-  if (e.target.classList.contains("btn-delete")) {
-    const id = parseInt(e.target.getAttribute("data-id"));
+  const btn = e.target.closest("button");
+  if (!btn) return;
+
+  const codigo = parseInt(btn.getAttribute("data-id"));
+
+  // ELIMINAR
+  if (btn.classList.contains("btn-delete")) {
+    if (!confirm("¿Desea eliminar este estudiante?")) return;
+
     const { error } = await supabase
       .from("estudiante")
       .delete()
-      .eq("codigo", id);
+      .eq("codigo", codigo);
 
     if (error) {
       console.error("Error al eliminar estudiante:", error.message);
       alert("Error al eliminar el estudiante.");
       return;
     }
+
     cargarEstudiantes();
+  }
+
+  // EDITAR
+  if (btn.classList.contains("btn-edit")) {
+    const { data: est, error } = await supabase
+      .from("estudiante")
+      .select("*")
+      .eq("codigo", codigo)
+      .single();
+
+    if (error) {
+      console.error("Error al obtener estudiante:", error.message);
+      alert("Error al cargar estudiante.");
+      return;
+    }
+
+    inputCodigo.value = est.codigo;
+    inputNombre.value = est.nombre;
+    inputEmail.value = est.email;
+    inputCarrera.value = est.carrera;
+
+    editando = true;
+    codigoEditando = est.codigo;
+
+    inputCodigo.disabled = true;
+    tituloForm.textContent = "Editar Estudiante";
+    btnSave.textContent = "Actualizar Estudiante";
+    btnCancel.style.display = "inline-block";
   }
 });
 
+// RESET FORMULARIO
+function resetFormulario() {
+  form.reset();
+  editando = false;
+  codigoEditando = null;
+  inputCodigo.disabled = false;
+  tituloForm.textContent = "Registrar Nuevo Estudiante";
+  btnSave.textContent = "Registrar Estudiante";
+  btnCancel.style.display = "none";
+}
+
+// CARGAR ESTUDIANTES
 async function cargarEstudiantes() {
   const { data: estudiantes, error } = await supabase
     .from("estudiante")
-    .select("*");
+    .select("*")
+    .order("codigo");
 
   if (error) {
     console.error("Error al cargar estudiantes:", error.message);
-    alert("Error al cargar estudiantes.");
     return;
   }
 
@@ -72,8 +157,11 @@ async function cargarEstudiantes() {
       <td>${est.email}</td>
       <td>${est.carrera}</td>
       <td>
+        <button class="btn btn-primary btn-sm btn-edit" data-id="${est.codigo}">
+          <i class="fa-solid fa-pencil"></i>
+        </button>
         <button class="btn btn-danger btn-sm btn-delete" data-id="${est.codigo}">
-          <i class="fas fa-trash"></i> Eliminar
+          <i class="fa-solid fa-trash-can"></i>
         </button>
       </td>
     `;
