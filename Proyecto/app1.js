@@ -70,27 +70,23 @@ btnCancel.addEventListener("click", () => {
   resetFormulario();
 });
 
-// EDITAR / ELIMINAR
+// ACCIONES DE LA TABLA EDITAR / ELIMINAR
 tablaEstudiantes.addEventListener("click", async (e) => {
   const btn = e.target.closest("button");
   if (!btn) return;
 
-  const codigo = parseInt(btn.getAttribute("data-id"));
+  const codigo = btn.getAttribute("data-id");
 
   // ELIMINAR
   if (btn.classList.contains("btn-delete")) {
-    if (!confirm("¿Desea eliminar este estudiante?")) return;
-
-    const { error } = await supabase
-      .from("estudiante")
-      .delete()
-      .eq("codigo", codigo);
-
+    const {error} = await supabase.from("estudiante").delete().eq("codigo", codigo);          
     if (error) {
-      console.error("Error al eliminar estudiante:", error.message);
+      console.error("Error al eliminar estudiante:", error);
       alert("Error al eliminar el estudiante.");
       return;
     }
+
+    alert("Estudiante eliminado correctamente.");
 
     cargarEstudiantes();
   }
