@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Profesores</title>
+    <title>Matrícula</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,50 +15,45 @@
   </head>
   <body style="font-family: Arial, sans-serif; background-color: #f5f7fa;">
     <header style="background-color: #002b5c; color: white; padding: 15px; text-align: center;">
-      <h1 style="margin: 0">Módulo de Profesores</h1>
+      <h1 style="margin: 0">Módulo de Matrícula</h1>
     </header>
 
     <nav style="background-color: #f4f4f4; padding: 10px; text-align: right;">
       <a href="Estudiantes.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
         <i class="fas fa-user"></i> Estudiantes
       </a>
-      <a href="Cursos.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
-        <i class="fas fa-chalkboard-teacher"></i> Cursos
+      <a href="profesores.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+        <i class="fas fa-chalkboard-teacher"></i> Profesores
       </a>
-      <a href="matricula.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
-        <i class="fas fa-book"></i> Matrícula
+      <a href="Cursos.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
+        <i class="fas fa-book"></i> Cursos
       </a>
       <a href="index.html" style="color: #002b5c; margin: 0 15px; text-decoration: underline; font-weight: bold;">
         <i class="fas fa-sign-out-alt"></i> Salir
       </a>
+      
     </nav>
 
     <main class="text-center">
       <div class="container mt-4 mb-5">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <h3 id="form-title" class="text-primary mb-4">Registrar Nuevo Profesor</h3>
+            <h3 id="form-title" class="text-primary mb-4">Realizar Matrícula</h3>
             <form id="formulario">
               <div class="mb-3 text-start">
-                <label for="codigo" class="form-label">Identificación</label>
+                <label for="codigo_estudiante" class="form-label">Identificación del estudiante</label>
                 <input type="text" class="form-control" id="codigo" required />
               </div>
               <div class="mb-3 text-start">
-                <label for="nombre" class="form-label">Nombre </label>
-                <input type="text" class="form-control" id="nombre" required />
+                <label for="codigo_profesor" class="form-label">Código del profesor</label>
+                <input type="text" class="form-control" id="codigo_profesor" required />
               </div>
               <div class="mb-3 text-start">
-                <label for="carrera" class="form-label">Carrera</label> 
-                <select class="form-select" id="carrera" required>
-                  <option value="" disabled selected>Seleccione una carrera</option>
-                  <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-                  <option value="Administración de Empresas">Administración de Empresas</option>
-                  <option value="Derecho">Derecho</option>
-                  <option value="Contabilidad y Finanzas">Contabilidad y Finanzas</option>
-                  <option value="Arquitectura">Arquitectura</option>
-                </select>
+                <label for="codigo_curso" class="form-label">Código del curso</label>
+                <input type="text" class="form-control" id="nombre" required />
               </div>
-              <button type="submit" class="btn btn-primary m-3">Registrar Profesor  </button>
+                <button type="submit" class="btn btn-primary m-3">Matricular Estudiante</button>
+              </button>
               <button type="button" id="btn-cancel" class="btn btn-secondary m-3" style="display:none;">
                 Cancelar
               </button>
@@ -68,21 +63,21 @@
       </div>
 
       <div class="container mt-4">
-        <h3 class="text-primary mb-3 text-center">Lista de Profesores</h3>
+        <h3 class="text-primary mb-3 text-center">Lista de Matrículas</h3>
         <table class="table table-bordered table-striped text-center">
           <thead class="table-primary">
             <tr>
-              <th>Identificación</th>
-              <th>Nombre</th>
-              <th>Carrera</th>
+              <th>Estudiante</th>
+              <th>Profesor</th>
+              <th>Curso</th>
               <th>Acciones</th>
             </tr>
           </thead>
-          <tbody id="tabla-profesores"></tbody>
+          <tbody id="tabla-cursos"></tbody>
         </table>
       </div>
     </main>
 
-    <script type="module" src="app2.js"></script>
+    <script type="module" src="app3.js"></script>
   </body>
 </html>

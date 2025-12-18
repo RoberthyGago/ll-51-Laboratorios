@@ -59,7 +59,7 @@ form.addEventListener("submit", async (e) => {
   cargarCursos();
 });
 
-// Cancelar edición
+// funcion Cancelar edición con click
 btnCancel.addEventListener("click", () => {
   resetFormulario();
 });
@@ -71,7 +71,7 @@ tablaCursos.addEventListener("click", async (e) => {
 
   const codigo = btn.getAttribute("data-id");
 
-  // Eliminar
+  // boton Eliminar
   if (btn.classList.contains("btn-delete")) {
     const { error } = await supabase.from("curso").delete().eq("codigo", codigo);
     if (error) {
@@ -83,7 +83,7 @@ tablaCursos.addEventListener("click", async (e) => {
     cargarCursos();
   }
 
-  // Editar
+  //  boton Editar
   if (btn.classList.contains("btn-edit")) {
     const { data: curso, error } = await supabase
       .from("curso")
